@@ -1,8 +1,13 @@
 import streamlit as st
+import torch
 from ultralytics import YOLO
 from PIL import Image
 import tempfile
 import os
+
+# 🔥 CRITICAL FIX FOR TORCH 2.6+ (Python 3.13)
+from ultralytics.nn.tasks import ClassificationModel
+torch.serialization.add_safe_globals([ClassificationModel])
 
 st.set_page_config(
     page_title="Plant Disease Diagnosis",
