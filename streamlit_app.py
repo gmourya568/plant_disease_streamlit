@@ -27,7 +27,6 @@ if not os.path.exists(MODEL_PATH):
     st.error("❌ yolov8_plantvillage_model.pt not found in project folder")
     st.stop()
 
-@st.cache_resource
 def load_model():
     return YOLO(MODEL_PATH)
 
@@ -531,4 +530,5 @@ else:
     st.markdown("### Instructions:")
     st.write("1. Upload a clear image of the plant leaf")
     st.write("2. Click the 'Diagnose' button")
+
     st.write("3. View detailed diagnosis and recommendations")
