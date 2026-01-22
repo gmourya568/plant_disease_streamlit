@@ -1,5 +1,7 @@
 import streamlit as st
 import torch
+# 🔥 FINAL FIX FOR PYTORCH 2.6+ (Streamlit Cloud / Python 3.13)
+torch.serialization.set_default_weights_only(False
 from ultralytics import YOLO
 from PIL import Image
 import tempfile
